@@ -51,4 +51,62 @@ uvicorn main:app --reload
 
 ---
 
+## Formas de comunicarnos con FastAPI
+
+1. A través de la web, usando la interfaz gráfica.
+
+Agregar video como seria.
+
+2. A través de la consola o mediante peticiones POST a través de la API.
+
+
+```bash
+uvicorn main:app --reload
+```
+
+---
+
+## Ejemplos de comunicación con FastAPI usando `curl`
+
+1. **Obtener todos los "todos" (GET /todos)**
+
+```bash
+curl -X GET http://127.0.0.1:8000/todos
+```
+
+2. **Crear un nuevo "todo" (POST /todos)**
+
+```bash
+curl -X POST http://127.0.0.1:8000/todos \
+    -H "Content-Type: application/json" \
+    -d '{"id":1,"title":"Aprender FastAPI","completed":false}'
+```
+
+3. **Actualizar un "todo" existente (PUT /todos/{todo_id})**
+
+```bash
+curl -X PUT http://127.0.0.1:8000/todos/1 \
+    -H "Content-Type: application/json" \
+    -d '{"id":1,"title":"Aprender FastAPI avanzado","completed":true}'
+```
+
+4. **Eliminar un "todo" (DELETE /todos/{todo_id})**
+
+```bash
+curl -X DELETE http://127.0.0.1:8000/todos/1
+```
+
+5. **Consultar información de la API (GET /api)**
+
+```bash
+curl -X GET http://127.0.0.1:8000/api
+```
+
+
+# Usando Postman
+
+Aca iria el video
+
+y con la descripcion tecnica
+
 
