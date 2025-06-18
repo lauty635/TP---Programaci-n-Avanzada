@@ -7,7 +7,9 @@ import os
 from sqlalchemy.orm import Session
 
 from database import Base, engine, get_db
-from models import Todo, TodoDB
+from models import TodoDB
+from schemas import Todo
+
 
 # Creamos la tabla en la base al iniciar la app
 Base.metadata.create_all(bind=engine)
