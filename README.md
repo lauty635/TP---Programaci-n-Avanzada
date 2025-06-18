@@ -18,6 +18,12 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
+- Si estás en **Windows**, la activación del entorno virtual es:
+
+```bash
+.\venv\Scripts\activate
+```
+
 > **¿Para qué sirve esto?**  
 Nos permite mantener el proyecto en onda, para que todos podamos correr el mismo codigo, sin diferencias de las versiones ya que eso nos puede generar conflictos en las depedencias xD
 ---
@@ -43,6 +49,7 @@ Para correr este programa es:
 ```bash
 uvicorn main:app --reload
 ```
+
 ---
 
 
