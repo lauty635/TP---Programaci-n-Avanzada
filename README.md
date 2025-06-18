@@ -57,14 +57,9 @@ uvicorn main:app --reload
 
 Agregar video como seria.
 
-2. A través de la consola o mediante peticiones POST a través de la API.
-
-
-```bash
-uvicorn main:app --reload
-```
-
 ---
+
+2. A través de la consola o mediante peticiones POST a través de la API.
 
 ## Ejemplos de comunicación con FastAPI usando `curl`
 
