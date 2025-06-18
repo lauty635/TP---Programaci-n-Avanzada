@@ -31,7 +31,6 @@ Nos permite mantener el proyecto en onda, para que todos podamos correr el mismo
 ## Instalacion de dependencias
 
 Una vez activado el entorno virtual, ejecutá:
-Requisitos
 
 ```bash
 pip install -r requirements.txt
