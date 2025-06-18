@@ -3,7 +3,6 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Definimos el URL
-
 DATABASE_URL = "sqlite:///./todos.db"
 
 # Lo que hace es basicamentamente se arrancar el comunicador entre sqlite y python
