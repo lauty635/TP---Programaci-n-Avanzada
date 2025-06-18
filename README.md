@@ -1,25 +1,48 @@
-# TP---Programaci-n-Avanzada
-Mediante este repositorio se presentara el desarrollo del trabajo practico realizado por los estudiantes.
+# TP - Programación Avanzada
 
+Este repositorio contiene el desarrollo del trabajo práctico realizado por los estudiantes para la materia **Programación Avanzada**.
 
-# Se crea un entorno virtual
+---
+
+## Configuración del entorno
+
+### 1. Crear un entorno virtual
+
+```bash
 python3 -m venv venv
+```
 
-# Activar el entorno virtual
+### 2. Activar el entorno virtual
+
+```bash
 source venv/bin/activate
+```
 
-Y para que sirve esto?
+> **¿Para qué sirve esto?**  
 Nos permite mantener el proyecto en onda, para que todos podamos correr el mismo codigo, sin diferencias de las versiones ya que eso nos puede generar conflictos en las depedencias xD
+---
 
+## Instalacion de dependencias
 
+Una vez activado el entorno virtual, ejecutá:
 Requisitos
 
+```bash
 pip install -r requirements.txt
+```
 
-Sirve para instalar las dependencias que vamos a usar.
+> Sirve para instalar las dependencias que vamos a usar.
+
+---
+
+## Cómo ejecutar la aplicación
 
 Para correr este programa es:
 
+
+```bash
 uvicorn main:app --reload
+```
+---
 
 
