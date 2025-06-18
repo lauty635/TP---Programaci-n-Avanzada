@@ -5,6 +5,13 @@ from fastapi.responses import RedirectResponse
 from typing import List
 from models import Todo
 import os
+from database import Base, engine
+from models import TodoDB
+
+# Creamos la tabla en la base al iniciar la app
+Base.metadata.create_all(bind=engine)
+
+
 
 app = FastAPI(title="To-Do API", description="API para gestionar tareas")
 
