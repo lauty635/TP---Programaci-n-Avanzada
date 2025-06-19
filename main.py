@@ -5,11 +5,9 @@ from fastapi.responses import RedirectResponse
 from typing import List
 import os
 from sqlalchemy.orm import Session
-
 from database import Base, engine, get_db
-from models import TodoDB
-from schemas import Todo
-
+from models import TodoDB  # Modelo SQLAlchemy
+from schemas import TodoCreate, TodoResponse  # Modelos Pydantic
 
 # Creamos la tabla en la base al iniciar la app
 Base.metadata.create_all(bind=engine)
@@ -32,7 +30,6 @@ if not os.path.exists("static"):
 # Servir archivos estáticos
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-
 # Redireccionar la raíz a la interfaz web
 @app.get("/")
 def read_root():
@@ -43,33 +40,30 @@ def api_info():
     return {"message": "To-Do API con FastAPI", "docs": "/docs", "app": "/static/index.html"}
 
 # Obtener todos los todos de la base de datos
-@app.get("/todos", response_model=List[Todo])
+@app.get("/todos", response_model=List[TodoResponse])  # Cambiado a TodoResponse
 def get_todos(db: Session = Depends(get_db)):
     todos_db = db.query(TodoDB).all()
     return todos_db
 
 # Obtenemos los ID de los TODO
-@app.get("/todos/{todo_id}", response_model=Todo)
-def get_todo(todo_id: int, db : Session = Depends(get_db)):
-        todo_db = db.query(TodoDB).filter(TodoDB.id == todo_id).first()
-        if not todo_db:
-            raise HTTPException(status_code=404, detail="Tarea no encontrada")
-        return todo_db
+@app.get("/todos/{todo_id}", response_model=TodoResponse)  # Cambiado a TodoResponse
+def get_todo(todo_id: int, db: Session = Depends(get_db)):
+    todo_db = db.query(TodoDB).filter(TodoDB.id == todo_id).first()
+    if not todo_db:
+        raise HTTPException(status_code=404, detail="Tarea no encontrada")
+    return todo_db
 
-@app.post("/todos", response_model=Todo)
-def create_todo(todo: Todo, db: Session = Depends(get_db)):    
-    # Verificamos que el ID exista
-    existing = db.query(TodoDB).filter(TodoDB.id == todo.id).first()
-    if existing:
-        raise HTTPException(status_code=400, detail="ID ya existe")
-    todo_db = TodoDB(**todo.dict())
+@app.post("/todos", response_model=TodoResponse)  # Cambiado a TodoResponse
+def create_todo(todo: TodoCreate, db: Session = Depends(get_db)):    
+    # Eliminar la verificación de ID existente
+    todo_db = TodoDB(**todo.dict())  # Cambia esto si usas model_dump()
     db.add(todo_db)
     db.commit()
     db.refresh(todo_db)
     return todo_db
 
-@app.put("/todos/{todo_id}", response_model=Todo)
-def update_todo(todo_id: int, updated_todo: Todo, db: Session = Depends(get_db)):
+@app.put("/todos/{todo_id}", response_model=TodoResponse)  # Cambiado a TodoResponse
+def update_todo(todo_id: int, updated_todo: TodoCreate, db: Session = Depends(get_db)):  # Cambiado a TodoCreate
     todo_db = db.query(TodoDB).filter(TodoDB.id == todo_id).first()
     if not todo_db:
         raise HTTPException(status_code=404, detail="Tarea no encontrada")
@@ -89,4 +83,3 @@ def delete_todo(todo_id: int, db: Session = Depends(get_db)):
     db.delete(todo_db)
     db.commit()
     return {"message": "Tarea eliminada"}
-
