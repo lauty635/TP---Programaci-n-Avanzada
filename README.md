@@ -105,3 +105,21 @@ Aca iria el video
 y con la descripcion tecnica
 
 
+subir como funcionancia los comandos de sql
+
+Estructura del proyecto.
+
+```
+├── database.py
+├── main.py
+├── models.py
+├── README.md
+├── requirements.txt
+├── schemas.py
+├── static
+│   ├── favicon.ico
+│   └── index.html
+├── todo_api_uml
+├── todo_classes.py
+├── todos.db
+```
