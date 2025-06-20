@@ -1,0 +1,13 @@
+// Diagrama de Clases To-Do API
+digraph {
+	rankdir=LR
+	TodoDB [label="{TodoDB|+ id: int\l+ title: str\l+ description: str\l+ completed: bool\l}" shape=record]
+	TodoCreate [label="{TodoCreate|+ title: str\l+ description: str?\l+ completed: bool\l}" shape=record]
+	TodoResponse [label="{TodoResponse|+ id: int\l+ title: str\l+ description: str?\l+ completed: bool\l}" shape=record]
+	TaskBase [label="{TaskBase\<\<abstract\>\>|- _title: str\l- _description: str\l- _completed: bool\l+ title\l+ description\l+ completed\l+ toggle_completed()\l+ __str__()\l}" shape=record]
+	Todo [label="{Todo|+ toggle_completed()\l+ to_dict()\l}" shape=record]
+	TodoResponse -> TodoCreate [arrowhead=onormal]
+	Todo -> TaskBase [arrowhead=onormal]
+	TodoCreate -> TodoDB [label="datos para create/update" style=dashed]
+	TodoDB -> TodoResponse [label="atributos al serializar" style=dashed]
+}
