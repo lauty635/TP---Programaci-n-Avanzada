@@ -83,3 +83,6 @@ Estructura del proyecto.
 
 ## Informe
 (https://docs.google.com/document/d/1A4yrSpmds7TlZYCrkhjc7PQJjc5RLW8HgQx4XA4q8uA/edit?usp=sharing)
+
+## Video 
+(https://youtu.be/VM3cxwJ8ue4?si=srnALux3Pkw30z4z)
