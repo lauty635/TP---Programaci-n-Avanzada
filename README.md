@@ -58,7 +58,7 @@ uvicorn main:app --reload
 ## Diagrama del Modelo de Datos:
 ![Diagrama del Modelo de Datos](https://raw.githubusercontent.com/lauty635/TP---Programaci-n-Avanzada/refs/heads/main/Diagrama_bases_de_datos.png)
 
-## Arquitectura MVC:
+## Arquitectura MVC y Inyección de Dependencias:
 ![MVC](https://raw.githubusercontent.com/lauty635/TP---Programaci-n-Avanzada/refs/heads/main/Arquitectura%20MVC.png)
 
 
