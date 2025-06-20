@@ -51,12 +51,12 @@ uvicorn main:app --reload
 
 ---
 
-## Diagrama del proyecto
+## Diagrama de Arquitectura del Proyecto:
 
-![Diagrama General](https://raw.githubusercontent.com/lauty635/TP---Programaci-n-Avanzada/refs/heads/main/Diagrama_general.png)
+![Diagrama de Arquitectura del Proyecto](https://raw.githubusercontent.com/lauty635/TP---Programaci-n-Avanzada/refs/heads/main/Diagrama_general.png)
 
-## Diagrama de base de datos
-![Diagrama Base de Datos](https://raw.githubusercontent.com/lauty635/TP---Programaci-n-Avanzada/refs/heads/main/Diagrama_bases_de_datos.png)
+## Diagrama del Modelo de Datos:
+![Diagrama del Modelo de Datos](https://raw.githubusercontent.com/lauty635/TP---Programaci-n-Avanzada/refs/heads/main/Diagrama_bases_de_datos.png)
 
 ## Arquitectura MVC:
 ![MVC](https://raw.githubusercontent.com/lauty635/TP---Programaci-n-Avanzada/refs/heads/main/Arquitectura%20MVC.png)
