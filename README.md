@@ -75,3 +75,8 @@ Estructura del proyecto.
 ├── todo_classes.py
 ├── todos.db
 ```
+## Presentación
+(https://docs.google.com/presentation/d/1XuuBfI7obzVgN_FMjbY-V9Zz9DI52KtCI_o-0waiHr0/edit?slide=id.g3625cff3bb5_0_163#slide=id.g3625cff3bb5_0_163)
+
+## Informe
+(https://docs.google.com/document/d/1A4yrSpmds7TlZYCrkhjc7PQJjc5RLW8HgQx4XA4q8uA/edit?usp=sharing)
